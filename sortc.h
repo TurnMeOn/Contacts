@@ -61,5 +61,5 @@ void sortc()
         fwrite(c+i,LEN,1,con);
     }
     fclose(con);
-    printf("Sort completed.\n\n");
+    printf("\n≈≈–ÚÕÍ≥….\n\n");
 }

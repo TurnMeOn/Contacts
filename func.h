@@ -8,20 +8,21 @@
 #include"countc.h"
 #include"read.h"
 #include"edit.h"
+#include"sortc.h"
 #define CHOICES0 "01234567"
 
 void print_menu()
 {
-    printf("------------MENU------------\n\n");
-    printf("Contacts\n\n");
-    printf("0 - Quit.\n");
-    printf("1 - Add contact(s).\n");
-    printf("2 - Remove a contact.\n");
-    printf("3 - Edit a contact.\n");
-    printf("4 - Search a contact.\n");
-    printf("5 - Sort contacts.\n");
-    printf("6 - Count contacts.\n");
-    printf("7 - Show contacts.\n");
+    printf("\n\t============================================通讯录管理系统============================================\n\n");
+    printf("\t\t\t\t\t\t\tContacts\n\n");
+    printf("\t\t\t\t\t\t0 - 退出.\n");
+    printf("\t\t\t\t\t\t1 - 添加通讯录.\n");
+    printf("\t\t\t\t\t\t2 - 删除通讯录.\n");
+    printf("\t\t\t\t\t\t3 - 编辑通讯录.\n");
+    printf("\t\t\t\t\t\t4 - 查找通讯录.\n");
+    printf("\t\t\t\t\t\t5 - 排序.\n");
+    printf("\t\t\t\t\t\t6 - 统计.\n");
+    printf("\t\t\t\t\t\t7 - 显示通讯录.\n");
 }
 
 int selectc()
@@ -54,7 +55,7 @@ void func()
         printf("Press enter to continue...");
         gets(t);
     }
-    else if(choice==5)printf("PASS\N");
+    else if(choice==5)sortc();
     else if(choice==6)print_total();
     else if(choice==7)readc();
 }

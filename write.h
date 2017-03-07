@@ -13,17 +13,17 @@ struct Contact* add()
     p1=(struct Contact*)malloc(sizeof(struct Contact));
     p2=p1;
     printf("*Input will be finished when name is 0.\n\n");
-    printf("Name:");
+    printf("姓名：");
     gets(p1->name);
     if(strcmp(p1->name,"0")==0)return NULL;
     do
     {
-        printf("Gender[0(Male)/1(Female)]:");
+        printf("性别[0(男)/1(女)]:");
         gets(sex);
     }while(strcmp(sex,"0")&&strcmp(sex,"1"));
-    if(strcmp(sex,"0")==0)strcpy(p1->gender,"Male");
-    else strcpy(p1->gender,"Female");
-    printf("Tel:");
+    if(strcmp(sex,"0")==0)strcpy(p1->gender,"男");
+    else strcpy(p1->gender,"女");
+    printf("电话：");
     gets(p1->tel);
     printf("E-mail:");
     gets(p1->email);
@@ -36,17 +36,17 @@ struct Contact* add()
         else p2->next=p1;
         p2=p1;
         p1=(struct Contact*)malloc(sizeof(struct Contact));
-        printf("Name:");
+        printf("姓名：");
         gets(p1->name);
         if(strcmp(p1->name,"0")==0)break;
         do
         {
-            printf("Gender[0(Male)/1(Female)]:");
+            printf("性别[0(男)/1(女)]：");
             gets(sex);
         }while(strcmp(sex,"0")&&strcmp(sex,"1"));
-        if(strcmp(sex,"0")==0)strcpy(p1->gender,"Male");
-        else strcpy(p1->gender,"Female");
-        printf("Tel:");
+        if(strcmp(sex,"0")==0)strcpy(p1->gender,"男");
+        else strcpy(p1->gender,"女");
+        printf("电话：");
         gets(p1->tel);
         printf("E-mail:");
         gets(p1->email);

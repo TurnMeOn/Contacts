@@ -5,10 +5,10 @@
 int delete_menu()
 {
 	printf("------------DELETE------------\n\n");
-	printf("0 - Back.\n");
-	printf("1 - Search by name.\n");
-	printf("2 - Search by tel.\n");
-	printf("3 - Search by E-mail.\n");
+	printf("0 - 返回.\n");
+	printf("1 - 按姓名查找.\n");
+	printf("2 - 按电话查找.\n");
+	printf("3 - 按E-mail查找.\n");
 	char c[10];
 	do
 	{
@@ -22,12 +22,12 @@ int delete_menu()
 int confirm()
 {
     char s[10];
-    printf("Are you SURE to remove the contact?(Y/N) ");
+    printf("确认删除？(Y/N) ");
     gets(s);
     if(strcmp(s,"Y")&&strcmp(s,"y"))
     {
-        printf("\nDelete canceled.\n");
-        sleep(1);
+        printf("\n取消删除.\n");
+        //sleep(1);
         return 0;
     }
     else return 1;
@@ -70,7 +70,7 @@ struct Contact* delete_by_email(char email[],struct Contact* head)
     return NULL;
 }
 
-struct Contact* deletec(struct Contact *head) //����ָ��
+struct Contact* deletec(struct Contact *head) //·µ»ØÖ¸Õë
 {
 	int c;
 	char s[30];
@@ -78,45 +78,45 @@ struct Contact* deletec(struct Contact *head) //����ָ��
 	if (c == 0)return NULL;
     else if (c == 1)
 	{
-		printf("Please enter the name: ");
+		printf("请输入姓名：");
 		gets(s);
         if(strcmp(s,head->name)!=0)return delete_by_name(s,head);
         showc(head);
         if(!confirm())return NULL;
         head=head->next;
         writec(head,"wb");
-        sleep(1);
-        printf("Delete successfully!\n\n");
+        //sleep(1);
+        printf("删除成功!\n\n");
         //system("pause");
-        sleep(1);
+        //sleep(1);
         return NULL;
 	}
 	else if (c == 2)
 	{
-		printf("Please enter the tel: ");
+		printf("请输入电话：");
 		gets(s);
         if(strcmp(s,head->tel)!=0)return delete_by_tel(s,head);
         showc(head);
         if(!confirm())return NULL;
         head=head->next;
         writec(head,"wb");
-        sleep(1);
-        printf("Delete successfully!\n\n");
+        //sleep(1);
+        printf("删除成功！\n\n");
         //system("pause");
-        sleep(1);
+        //sleep(1);
         return NULL;
 	}
 	else if (c == 3)
 	{
-		printf("Please enter the e-mail: ");
+		printf("请输入E-mail: ");
 		gets(s);
         if(strcmp(s,head->email)!=0)return delete_by_email(s,head);
         showc(head);
         if(!confirm())return NULL;
         head=head->next;
         writec(head,"wb");
-        sleep(1);
-        printf("Delete successfully!\n\n");
+        //sleep(1);
+        printf("删除成功\n\n");
         //system("pause");
         //sleep(1);
         return NULL;
@@ -134,10 +134,10 @@ void removec()
     p2=p1->next;
     (p1->next)=(p2->next);
     writec(head,"wb");
-    sleep(1);
+    //sleep(1);
     printf("Delete successfully!\n\n");
     //system("pause");
-    sleep(1);
+    //sleep(1);
     //char t[5];
     //printf("Press enter to continue...\n");
     //gets(t);

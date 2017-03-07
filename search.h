@@ -6,10 +6,10 @@
 int search_menu()
 {
 	printf("------------SEARCH------------\n\n");
-	printf("0 - Back.\n");
-	printf("1 - Search by name.\n");
-	printf("2 - Search by tel.\n");
-	printf("3 - Search by E-mail.\n");
+	printf("0 - 返回.\n");
+	printf("1 - 按姓名查找.\n");
+	printf("2 - 按电话查找.\n");
+	printf("3 - 按E-mail查找.\n");
 	char c[10];
 	do
 	{
@@ -53,7 +53,7 @@ struct Contact* search_by_email(char email[],struct Contact* head)
     return NULL;
 }
 
-struct Contact* findc() //����ָ��
+struct Contact* findc() //·µ»ØÖ¸Õë
 {
 	int c;
 	char s[30];
@@ -63,19 +63,19 @@ struct Contact* findc() //����ָ��
 	if (c == 0)return NULL;
     else if (c == 1)
 	{
-		printf("Please enter the name: ");
+		printf("请输入姓名：");
 		gets(s);
         return search_by_name(s,head);
 	}
 	else if (c == 2)
 	{
-		printf("Please enter the tel: ");
+		printf("请输入电话：");
 		gets(s);
         return search_by_tel(s,head);
 	}
 	else if (c == 3)
 	{
-		printf("Please enter the e-mail: ");
+		printf("请输入E-mail：");
 		gets(s);
         return search_by_email(s,head);
 	}
