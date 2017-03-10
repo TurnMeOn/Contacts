@@ -1,6 +1,5 @@
 #include<stdio.h>
-//#include"cfile.h"
-//#include"countc.h"
+
 
 int print_sort()
 {
@@ -63,3 +62,4 @@ void sortc()
     fclose(con);
     printf("\n≈≈–ÚÕÍ≥….\n\n");
 }
+

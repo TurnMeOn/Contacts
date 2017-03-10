@@ -1,10 +1,11 @@
 #include<stdio.h>
 #include"type.h"
-#define FILENAME "contacts.dat"
+//#define FILENAME "contacts.dat"
 #define LEN sizeof(struct Contact)
 
 FILE * open_c(char s[])
 {
+    extern char FILENAME[20];
     return fopen(FILENAME,s);
 }
 
@@ -16,6 +17,7 @@ void close_c(FILE *fp)
 struct Contact* copyc()
 {
     FILE *con;
+    extern char FILENAME[20];
     struct Contact* head=NULL,*p1,*p2;
     con=fopen(FILENAME,"rb");
     int n=0;

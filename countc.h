@@ -3,6 +3,7 @@
 int count_total()
 {
     FILE *con;
+    extern char FILENAME[20];
     con=fopen(FILENAME,"rb");
     int total=0;
     struct Contact* p;
@@ -18,6 +19,7 @@ int count_total()
 int count_male()
 {
     FILE *con;
+    extern char FILENAME[20];
     con=fopen(FILENAME,"rb");
     int male=0;
     struct Contact* p;
@@ -38,8 +40,6 @@ void print_total()
     printf("|%-10s|%8d|\n","Female",total-male);
     printf("|%-10s|%8d|\n","Male",male);
     printf("|__________|________|\n\n");
-    //system("pause");
-    //sleep(1);
     char t[5];
     printf("Press enter to continue...\n");
     gets(t);

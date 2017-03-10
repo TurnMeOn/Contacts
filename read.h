@@ -2,13 +2,14 @@
 void print_title()
 {
     printf(" ____________________________________________________________________\n");
-    printf("|%-10s|%-10s|%-15s|%-30s|\n","姓名","性别","电话","E-mail");
+    printf("|%-10s|%-10s|%-15s|%-30s|\n","Name","Gender","Tel","E-mail");
 }
 void readc()
 {
     FILE *con;
     struct Contact *p;
     p=(struct Contact*)malloc(LEN);
+    extern char FILENAME[20];
     con=fopen(FILENAME,"rb");
     if(con==NULL)
     {
@@ -25,8 +26,6 @@ void readc()
     fclose(con);
     printf("|__________|__________|_______________|______________________________|\n");
     printf("\n");
-    //system("pause");
-    //sleep(1);
     char t[5];
     printf("Press enter to continue...\n");
     gets(t);
