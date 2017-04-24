@@ -13,21 +13,21 @@
 
 char FILENAME[20];
 
-void print_menu()
+void print_menu()   //打印主菜单
 {
-    printf("------------MENU------------\n\n");
-    printf("Contacts\n\n");
-    printf("0 - Quit.\n");
-    printf("1 - Add contact(s).\n");
-    printf("2 - Remove a contact.\n");
-    printf("3 - Edit a contact.\n");
-    printf("4 - Search a contact.\n");
-    printf("5 - Sort contacts.\n");
-    printf("6 - Count contacts.\n");
-    printf("7 - Show contacts.\n");
+    printf("------------通讯录------------\n\n");
+    //printf("Contacts\n\n");
+    printf("0 - 退出.\n");
+    printf("1 - 添加.\n");
+    printf("2 - 删除.\n");
+    printf("3 - 编辑.\n");
+    printf("4 - 查找.\n");
+    printf("5 - 排序.\n");
+    printf("6 - 统计.\n");
+    printf("7 - 显示.\n");
 }
 
-int selectc()
+int selectc()   //向用户询问选项并将其返回
 {
     print_menu();
     char c[10];
@@ -39,7 +39,7 @@ int selectc()
     return c[0]-'0';
 }
 
-void func()
+void func() //调用各项功能
 {
     while(1)
     {
@@ -53,15 +53,12 @@ void func()
         else if(choice==4)
         {
             showc(findc());
-            //system("pause");
-            //sleep(2);
             char t[5];
-            printf("Press enter to continue...");
+            printf("按回车继续...");
             gets(t);
         }
-        else if(choice==5)sortc();
+        else if(choice==5)sortsort();
         else if(choice==6)print_total();
         else if(choice==7)readc();
     }
 }
-

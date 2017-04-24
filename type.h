@@ -1,7 +1,6 @@
-#include<stdio.h>
 
 
-struct Contact
+struct Contact  //定义结构体
 {
     char name[10];
     char gender[10];
@@ -9,4 +8,3 @@ struct Contact
     char email[30];
     struct Contact *next;
 };
-

@@ -3,18 +3,15 @@
 //#define FILENAME "contacts.dat"
 #define LEN sizeof(struct Contact)
 
-FILE * open_c(char s[])
+FILE * open_c(char s[]) //打开FILENAME文件并返回FILE*类型，打开方式取决于传入的字符串
 {
     extern char FILENAME[20];
     return fopen(FILENAME,s);
 }
 
-void close_c(FILE *fp)
-{
-    fclose(fp);
-}
 
-struct Contact* copyc()
+
+struct Contact* copyc() //打开文件，并在内存中克隆出一个相同的结构体
 {
     FILE *con;
     extern char FILENAME[20];

@@ -1,5 +1,7 @@
 #include<stdio.h>
 #include<string.h>
+
+//定义用户结构体
 struct usr
 {
     char username[20];
@@ -9,19 +11,20 @@ struct usr
 
 char FILENAME[20];
 
+//登陆函数，登陆成功返回1，否则返回0
 int sign_in()
 {
     char usr[20],password[20];
-    printf("Username: ");
+    printf("用户名：");
     gets(usr);
-    printf("Password: ");
+    printf("密码：");
     gets(password);
 
     FILE* info;
     info=fopen("log.dat","rb");
     if(info==NULL)
     {
-        printf("Please sign up first.\n\n");
+        printf("请先注册\n\n");
         return 0;
     }
     struct usr* p;
@@ -35,17 +38,18 @@ int sign_in()
             return 1;
         }
     }
-	printf("No such account or wrong password.\n\n");
+	printf("密码错误.\n\n");
 	return 0;
 
 }
 
+//注册函数
 int sign_up()
 {
     char username[20],password[20];
-    printf("Username: ");
+    printf("用户名：");
     gets(username);
-    printf("Password: ");
+    printf("密码：");
     gets(password);
     struct usr newone;
     strcpy(newone.username,username);
@@ -60,7 +64,7 @@ int sign_up()
     {
         if(strcmp(p->username,newone.username)==0)
         {
-            printf("Account already exists.\n\n");
+            printf("用户名已存在\n\n");
             fclose(info);
             return 0;
         }
@@ -73,11 +77,12 @@ int sign_up()
 }
 
 
+//登陆和注册
 int login()
 {
-    printf("0 - Exit.\n");
-    printf("1 - Sign in.\n");
-    printf("2 - Sign up.\n");
+    printf("0 - 退出.\n");
+    printf("1 - 登陆.\n");
+    printf("2 - 注册.\n");
     char c[6];
     char ch[]="012";
     do

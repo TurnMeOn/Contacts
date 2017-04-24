@@ -6,24 +6,24 @@
 
 
 
-struct Contact* add()
+struct Contact* add()   //在内存中构造出动态链表，并向其中添加元素，返回新链表的头指针
 {
     char sex[5];
     struct Contact *head=NULL,*p1,*p2;
     p1=(struct Contact*)malloc(sizeof(struct Contact));
     p2=p1;
     printf("*Input will be finished when name is 0.\n\n");
-    printf("Name:");
+    printf("姓名：");
     gets(p1->name);
     if(strcmp(p1->name,"0")==0)return NULL;
     do
     {
-        printf("Gender[0(Male)/1(Female)]:");
+        printf("性别[0(男)/1(女)]：");
         gets(sex);
     }while(strcmp(sex,"0")&&strcmp(sex,"1"));
-    if(strcmp(sex,"0")==0)strcpy(p1->gender,"Male");
-    else strcpy(p1->gender,"Female");
-    printf("Tel:");
+    if(strcmp(sex,"0")==0)strcpy(p1->gender,"男");
+    else strcpy(p1->gender,"女");
+    printf("电话：");
     gets(p1->tel);
     printf("E-mail:");
     gets(p1->email);
@@ -36,17 +36,17 @@ struct Contact* add()
         else p2->next=p1;
         p2=p1;
         p1=(struct Contact*)malloc(sizeof(struct Contact));
-        printf("Name:");
+        printf("姓名：");
         gets(p1->name);
         if(strcmp(p1->name,"0")==0)break;
         do
         {
-            printf("Gender[0(Male)/1(Female)]:");
+            printf("性别[0(男)/1(女)]：");
             gets(sex);
         }while(strcmp(sex,"0")&&strcmp(sex,"1"));
-        if(strcmp(sex,"0")==0)strcpy(p1->gender,"Male");
-        else strcpy(p1->gender,"Female");
-        printf("Tel:");
+        if(strcmp(sex,"0")==0)strcpy(p1->gender,"男");
+        else strcpy(p1->gender,"女");
+        printf("电话：");
         gets(p1->tel);
         printf("E-mail:");
         gets(p1->email);
@@ -56,7 +56,7 @@ struct Contact* add()
     return head;
 }
 
-void writec(struct Contact* head,char s[])
+void writec(struct Contact* head,char s[]) // 传入头指针，将结构体数据写入文件中，写入方式由传入的字符串决定
 {
     FILE *con;
     extern char FILENAME[20];
@@ -68,7 +68,4 @@ void writec(struct Contact* head,char s[])
     }
     fclose(con);
     printf("\n");
-    //sleep(1);
-    char t[5];
 }
-
